@@ -1,0 +1,7 @@
+{
+  "name": "BurgerMobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
