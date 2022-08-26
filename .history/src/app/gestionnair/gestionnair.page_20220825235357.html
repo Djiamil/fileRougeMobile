@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Livreur</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-title class="nomLivreur">{{ OnlivConnect.nom}}</ion-title>
+  <div *ngFor="let livraison of livraisonLivreur">
+   <p>{{livraison.telephone}}</p>
+   <p>{{livraison.zone.nomzone}}</p>
+   <p>{{livraison.etatlivraison}}</p>
+  </div>
+</ion-content>
+
+<table class="table">
+  <thead>
+      <tr class="bg-warning">
+      <th scope="col">Date commande</th>
+      <th scope="col">Numero</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Actions</th>
+      </tr>
+  </thead>
+  <tbody>
+      <th scope="row">{{}}</th>
+      <th scope="row">{{livr.numComande}}</th>
+      <th scope="row">{{livr.paiement}}</th>
+      <button class="btn btn-warning"  (click)=" modifisEtatComande(livr.id)">Pas livrer</button>
+  </tr>
+</tbody>
+<button class="btn btn-warning" (click)=" modifeEtaLivraisons(parameters);livreurDisponible()">Etat livraisons</button>
+</table>

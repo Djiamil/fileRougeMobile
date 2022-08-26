@@ -1,0 +1,27 @@
+
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-segment-button value="bookmark" class="rowsole">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-title>Les details des produits</ion-title>
+    </ion-toolbar>
+
+    
+
+  </ion-header>
+  <ion-content fullscreen>
+    <div></div>
+    <ion-card-subtitle>burger</ion-card-subtitle>
+    <ion-card  *ngFor="let burger of burgers">
+      <ion-card-header>
+        <ion-card-subtitle>{{burger.nom}}</ion-card-subtitle>
+        <img [src]="convertImage(burger.image)"/>
+        <div class="prixdetail">
+          <ion-card-title>{{burger.prix}} Frcfa</ion-card-title>
+        </div>
+      </ion-card-header> 
+    </ion-card>
+  </ion-content>
+</ion-app>

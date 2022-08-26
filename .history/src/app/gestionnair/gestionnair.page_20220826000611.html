@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Livreur</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-title class="nomLivreur">{{ OnlivConnect.nom}}</ion-title>
+  <table class="table">
+    <thead>
+        <tr class="bg-warning">
+        <th scope="col">Telephone</th>
+        <th scope="col">Zone</th>
+        <th scope="col">Etat</th>
+  
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livraison of livraisonLivreur">
+        <th scope="row">{{livraison.telephone}}</th>
+        <th scope="row">{{livraison.zone.nomzone}}</th>
+        <th scope="row">{{livraison.etatlivraison}}</th>
+        <ion-button class="btn btn-warning">Pas livrer</ion-button>
+      </tr>
+  </tbody>
+  </table>
+</ion-content>
+

@@ -1,0 +1,16 @@
+
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>CATALOGUE</ion-title>
+    </ion-toolbar>Les Burgers</ion-header>
+  <ion-content fullscreen>
+    <ion-card  *ngFor="let menu of menus">
+      <ion-card-header>
+        <ion-card-subtitle>{{menu.nom}}</ion-card-subtitle>
+        <img src="./madison.jpg" />
+        <ion-card-title>{{menu.prix}}</ion-card-title>
+      </ion-card-header> 
+    </ion-card>
+  </ion-content>
+</ion-app>

@@ -1,0 +1,14 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Platform } from '@ionic/angular';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+
+  constructor(private storage:Storage,private httpclient:HttpClient,
+    private plt: Platform,
+    
+    ) { }
+}

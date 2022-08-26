@@ -1,0 +1,47 @@
+
+  
+
+<ion-app>
+  <ion-header   
+  parallax
+  imageUrl=myImagePath
+  height="350"
+  bgPosition="top">
+   
+   
+
+    <ion-toolbar>
+      <ion-title>CATALOGUE</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+    <ion-content appParallaxheader [scrollEvents]="true" [fullscreen]="true">
+      <div class="parallaxximage" [style.background-image]="'url('+ myImagePath +')'"></div>
+      <div class="main"> 
+    <ion-card-subtitle>Les burger</ion-card-subtitle>
+    <ion-card  *ngFor="let burger of burgers">
+      <ion-card-header>
+        <ion-card-subtitle>{{burger.nom}}</ion-card-subtitle>
+        <img [src]="convertImage(burger.image)" />
+        <div class="prixdetail">
+          <ion-card-title>{{burger.prix}} Frcfa</ion-card-title>
+          <ion-button [routerLink]="['/catalogue',burger.id]">Details</ion-button>
+        </div>
+      </ion-card-header> 
+    </ion-card>
+
+
+    <ion-card-subtitle>Les Menus</ion-card-subtitle>
+    <ion-card  *ngFor="let menu of menus">
+      <ion-card-header>
+        <ion-card-subtitle>{{menu.nom}}</ion-card-subtitle>
+        <img [src]="convertImage(menu.image)" />
+        <div class="prixdetail">
+          <ion-card-title>{{menu.prix}} Frcfa</ion-card-title>
+          <ion-button>Details</ion-button>
+        </div>
+      </ion-card-header> 
+    </ion-card>
+      </div>
+    </ion-content>
+</ion-app>

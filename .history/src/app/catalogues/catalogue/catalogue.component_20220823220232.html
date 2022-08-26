@@ -1,0 +1,85 @@
+
+  
+
+<ion-app>
+  <ion-header   
+  parallax
+  imageUrl= "https://resizer.otstatic.com/v2/photos/xlarge/1/26090377.jpg"
+  height="300"
+  bgPosition="top">
+   
+   
+
+    <ion-toolbar>
+      <ion-title>CATALOGUE</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+    <ion-content appParallaxheader [scrollEvents]="true" [fullscreen]="true">
+       
+      
+
+      <!-- <div class="parallaxximage" [style.background-image]="'url('+ myImagePath +')'"></div> -->
+      <div class="main">
+        <div class="buttoneicone">
+          <!-- <ion-segment-button value="bookmark">
+            <ion-icon name="keypad-outline"></ion-icon>
+          </ion-segment-button> -->
+          <ion-segment-button value="bookmark" (click)="getCatalogue()"">
+            <a><ion-icon name="list-circle-outline" "></ion-icon></a>
+          </ion-segment-button>
+        </div>
+
+
+    <ion-card-subtitle>Les burger</ion-card-subtitle>
+    <ion-card  *ngFor="let burger of burgers">
+      <ion-card-header>
+        <ion-card-subtitle>{{burger.nom}}</ion-card-subtitle>
+        <img [src]="convertImage(burger.image)" [hidden]="cacheImg"/>
+        <div class="prixdetail">
+          <ion-card-title>{{burger.prix}} Frcfa</ion-card-title>
+          <ion-button [routerLink]="['/catalogue',burger.id]">Details</ion-button>
+        </div>
+      </ion-card-header> 
+    </ion-card>
+
+
+    <ion-card-subtitle>Les Menus</ion-card-subtitle>
+    <ion-card  *ngFor="let menu of menus">
+      <ion-card-header>
+        <ion-card-subtitle>{{menu.nom}}</ion-card-subtitle>
+        <img [src]="convertImage(menu.image)" [hidden]="cacheImg"/>
+        <div class="prixdetail">
+          <ion-card-title>{{menu.prix}} Frcfa</ion-card-title>
+          <ion-button>Details</ion-button>
+        </div>
+      </ion-card-header> 
+    </ion-card>
+
+   
+      </div>
+
+      
+
+    </ion-content>
+</ion-app>
+
+
+
+<ion-fab horizontal="end" vertical="top" slot="fixed" edge>
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list>
+    <ion-fab-button color="light">
+      <ion-icon name="logo-facebook"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="light">
+      <ion-icon name="logo-twitter"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="light">
+      <ion-icon name="logo-vimeo"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>

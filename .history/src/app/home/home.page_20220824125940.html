@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Acueil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-slides pager="true">
+      <ion-slide>
+        <div class="slide">
+          <h2>Welcome</h2>
+          <img src="https://image.shutterstock.com/image-photo/burger-isolated-on-black-background-260nw-177168146.jpg"/>
+          <p>
+            Brazil Burger
+          </p>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <img  class="" src="https://image.shutterstock.com/image-photo/burger-isolated-on-black-background-260nw-177168146.jpg"/>
+        <h2>Connexion</h2>
+        <form>
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="text"  name="title"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-textarea  name="description"></ion-textarea>
+          </ion-item>
+        </form>
+        <ion-button routerLink="/menu">Se connecter</ion-button>
+      </ion-slide>
+    </ion-slides>
+  </ion-content>
+

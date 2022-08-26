@@ -1,0 +1,21 @@
+
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Les details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content fullscreen>
+    <ion-card-subtitle>Les burger</ion-card-subtitle>
+    <ion-card  *ngFor="let burger of burgers">
+      <ion-card-header>
+        <ion-card-subtitle>{{burger.nom}}</ion-card-subtitle>
+        <img [src]="convertImage(burger.image)"/>
+        <div class="prixdetail">
+          <ion-card-title>{{burger.prix}} Frcfa</ion-card-title>
+          <ion-button [routerLink]="['/catalogue',burger.id]">Details</ion-button>
+        </div>
+      </ion-card-header> 
+    </ion-card>
+  </ion-content>
+</ion-app>
