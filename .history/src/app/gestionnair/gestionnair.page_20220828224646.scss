@@ -1,0 +1,51 @@
+.nomLivreur{
+  display: flex;
+  margin-top: 0%;
+  justify-content: center;
+  align-items: center;
+}
+
+.nomLivreus{
+  margin: 2%;
+}
+// ion-content {
+//     --ion-background-color: transparent;
+// }
+
+//la partie scanneur
+.scan-box {
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 100vmax rgb(0, 0, 0, 0.5);
+    content: "";
+    display: block;
+    left: 50%;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+  }
+  .scan-button {
+    margin: 0px;
+    position: absolute;
+    bottom: 100px;
+    width: 100vw;
+    height: 50px;
+    z-index: 11;
+  }
+  span{
+    color: red;
+  }
+  ion-item ion-label ul li{
+    text-decoration: none;
+ }
+ app-menu{
+  display: flex;
+  position: absolute;  
+
+ }
+ ion-header{
+  display: flex;
+  position: relative;
+ }
+ ion-content{}

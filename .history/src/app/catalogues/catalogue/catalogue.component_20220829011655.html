@@ -1,0 +1,144 @@
+
+
+<ion-app>
+  <ion-header   
+  parallax
+  imageUrl= "https://resizer.otstatic.com/v2/photos/xlarge/1/26090377.jpg"
+  height="300"
+  bgPosition="top">
+  
+  
+  
+  <ion-toolbar>
+    <ion-title>CATALOGUE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content appParallaxheader [scrollEvents]="true" [fullscreen]="true">
+  
+  
+  
+  <!-- <div class="parallaxximage" [style.background-image]="'url('+ myImagePath +')'"></div> -->
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-app>
+    <ion-menu side="start" contentId="content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title class="menu-title">Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <!-- <ion-menu-toggle auto-hide="true"> -->
+            <ion-item routerLink="/catalogue" routerDirection="forward">
+              <ion-label>Nos Menus</ion-label>
+            </ion-item>
+            <ion-item routerLink="/catalogue" routerDirection="forward">
+              <ion-label>Nos Burgers</ion-label>
+            </ion-item>
+            
+              <ion-label (click)="etalecomplement()">Nos Complement
+                <ul>
+                  <ion-item routerLink="/tabs/tab3" routerDirection="forward" [hidden]="etaleComplement">
+                <li >Nos Boissons</li>
+              </ion-item>
+              <ion-item routerLink="/tabs/tab3" routerDirection="forward" [hidden]="etaleComplement">
+                <li >Nos Frites</li>
+              </ion-item>
+              </ul>
+              </ion-label>
+            
+    
+            <ion-item routerLink="/tabs/tab2" routerDirection="forward">
+              <ion-label>Mon Profil</ion-label>
+            </ion-item>
+            <ion-item routerLink="/tabs/tab2" routerDirection="forward">
+              <ion-label>Mes Commandes</ion-label>
+            </ion-item>
+            <ion-item routerLink="/tabs/tab2" routerDirection="forward">
+              <ion-label>Deconnexion</ion-label>
+            </ion-item>
+          <!-- </ion-menu-toggle> -->
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+  <div class="main">
+    <div class="buttoneicone">
+      <ion-segment-button value="bookmark" (click)="getCatalogues()">
+        <ion-icon name="keypad-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="bookmark" (click)="getCatalogue()">
+        <ion-icon name="list-circle-outline"></ion-icon>
+      </ion-segment-button>
+    </div>
+
+    <ion-card-subtitle>Les burger</ion-card-subtitle>
+    <ion-card  *ngFor="let burger of burgers" [hidden]="cataloguer">
+      <ion-card-header>
+        <ion-card-subtitle>{{burger.nom}}</ion-card-subtitle>
+        <img [src]="convertImage(burger.image)" [hidden]="cacheImg"/>
+        <div class="prixdetail">
+          <ion-segment-button value="bookmark" class="rowsole" [routerLink]="['/catalogue',burger.id]">
+            <ion-icon name="arrow-back-circle-outline" class="arrows" [hidden]="cacheiconedetail"></ion-icon>
+          </ion-segment-button>
+          <ion-card-title>{{burger.prix}} Frcfa</ion-card-title>
+          <ion-button [routerLink]="['/catalogue',burger.id]" [hidden]="cacheImg">Details</ion-button>
+        </div>
+      </ion-card-header> 
+      
+
+    </ion-card>
+
+
+    <ion-card-subtitle>Les Menus</ion-card-subtitle>
+    <ion-card  *ngFor="let menu of menus">
+      <ion-card-header>
+        <ion-card-subtitle>{{menu.nom}}</ion-card-subtitle>
+        <img [src]="convertImage(menu.image)" [hidden]="cacheImg"/>
+        <div class="prixdetail">
+          <ion-segment-button value="bookmark" class="rowsole" [routerLink]="['/catalogue',menu.id]">
+            <ion-icon name="arrow-back-circle-outline" class="arrows" [hidden]="cacheiconedetail"></ion-icon>
+          </ion-segment-button>
+          <ion-card-title>{{menu.prix}} Frcfa</ion-card-title>
+          <ion-button [routerLink]="['/catalogue',menu.id]" [hidden]="cacheImg">Details</ion-button>
+        </div>
+      </ion-card-header> 
+    </ion-card>
+
+   
+      </div>
+
+      
+
+    </ion-content>
+</ion-app>
+
+
+
+<ion-fab horizontal="end" vertical="end" slot="fixed" edge>
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list>
+    <ion-fab-button color="light">
+      <ion-icon name="logo-facebook"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="light">
+      <ion-icon name="logo-twitter"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="light">
+      <ion-icon name="logo-vimeo"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+
+
+

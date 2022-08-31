@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>clients</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-app>
+    <ion-menu side="start" contentId="content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title class="menu-title">Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <!-- <ion-menu-toggle auto-hide="true"> -->
+            <ion-item routerLink="/catalogue" routerDirection="forward">
+              <ion-label>Nos Menus</ion-label>
+            </ion-item>
+            <ion-item routerLink="/catalogue" routerDirection="forward">
+              <ion-label>Nos Burgers</ion-label>
+            </ion-item>
+              <ion-label (click)="etalecomplement()">Nos Complement
+                <ul>
+                  <ion-item routerLink="/tabs/tab3" routerDirection="forward" [hidden]="etaleComplement">
+                <li >Nos Boissons</li>
+              </ion-item>
+              <ion-item routerLink="/tabs/tab3" routerDirection="forward" [hidden]="etaleComplement">
+                <li >Nos Frites</li>
+              </ion-item>
+              </ul>
+              </ion-label>
+            <ion-item routerLink="/tabs/tab2" routerDirection="forward">
+              <ion-label>Mon Profil</ion-label>
+            </ion-item>
+            <ion-item routerLink="/tabs/tab2" routerDirection="forward">
+              <ion-label>Mes Commandes</ion-label>
+            </ion-item>
+            <ion-item routerLink="/tabs/tab2" routerDirection="forward">
+              <ion-label>Deconnexion</ion-label>
+            </ion-item>
+          <!-- </ion-menu-toggle> -->
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="content"></ion-router-outlet>
+  </ion-app>
+  <ion-title>{{Nom}}</ion-title>
+  <ion-d *ngFor="let commandes of clientCommandes">
+    <qrcode [qrdata]="'{{commandes.qrcode}}'" [size]="256" [level]="'M'"></qrcode>
+    <ion-title>{{commandes.qrcode}}</ion-title>
+  </ion-item>
+</ion-content>
